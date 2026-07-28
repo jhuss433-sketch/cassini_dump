@@ -23,8 +23,8 @@ def load_model(checkpoint_path: Path, num_energy_bins: int) -> BowShockTCN:
 
     model = BowShockTCN(
         num_energy_bins = saved_args.get("num_energy_bins", num_energy_bins),
-        num_channels    = saved_args.get("num_channels", [64, 128, 256, 128]),
-        dropout         = saved_args.get("dropout", 0.2),
+        num_channels    = saved_args.get("num_channels", [32, 64, 128, 64, 32]),
+        dropout         = saved_args.get("dropout", 0.0),
     )
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
