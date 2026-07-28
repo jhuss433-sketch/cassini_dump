@@ -69,7 +69,7 @@ def verify_onnx(output_path: Path, num_energy_bins: int, time_steps: int):
         import onnx
         import onnxruntime as ort
     except ImportError:
-        print('onnx onnxruntime not installed skipping verification')
+        print('onnx onnxruntime not installed  skipping verification ')
         return
 
     onnx_model = onnx.load(str(output_path))
